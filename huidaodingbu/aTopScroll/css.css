@@ -1,0 +1,22 @@
+.box
+{
+	width: 1190px;
+	height: 2787px;
+	background: #E8E8E8;
+	margin: 0 auto;
+}
+#top
+{
+	width: 40px;
+	height: 40px;
+	background: red;
+	position: fixed;
+	left: 50%;
+	margin-left: 600px;
+	bottom: 80px;
+	background: url(./top_bg.png) no-repeat left top;
+}
+#top:hover
+{
+	background: url(./top_bg.png) no-repeat left -40px;
+}
