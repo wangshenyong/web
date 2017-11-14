@@ -1,0 +1,47 @@
+$height_ok:blue;
+$font_color:red;
+@mixin font_color
+{
+	font:{
+		style:weight;
+		size:23pt;
+		color:#aa3333;
+	}
+}
+#ok
+{
+	background:$height_ok;
+	height:400px;
+	width:200px;
+	float:left;
+	.child {
+		color:$font_color;
+
+	};
+	h2 {
+		color:yellow;
+		@include font_color;
+		&:hover {
+			color:#efefef;
+		}
+		.kk & {
+			background:#888888;
+		}
+	}
+	h3 {
+		color:#FFFFFF;
+		border:{
+			style:solid;
+			width:1px;
+			color:#ccc;
+		}
+	}
+}
+#container
+{
+	width:400px;
+	height:400px;
+	background:red;
+	float:left;
+	@extend .child;
+}

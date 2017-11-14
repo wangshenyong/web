@@ -1,0 +1,10 @@
+#ok { background: blue; height: 400px; width: 200px; float: left; }
+#ok .child, #ok #container { color: red; }
+#ok h2 { color: yellow; font-style: weight; font-size: 23pt; font-color: #aa3333; }
+#ok h2:hover { color: #efefef; }
+.kk #ok h2 { background: #888888; }
+#ok h3 { color: #FFFFFF; border-style: solid; border-width: 1px; border-color: #ccc; }
+
+#container { width: 400px; height: 400px; background: red; float: left; }
+
+/*# sourceMappingURL=demo.css.map */
