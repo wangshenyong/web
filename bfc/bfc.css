@@ -1,0 +1,16 @@
+#bfcbox {
+  background: #000;
+  color: #fff;
+  width: 200px;
+  height: 200px;
+  overflow: auto;
+}
+#bfcbox .child {
+  width: 400px;
+  height: 200px;
+  background: red;
+  margin: 20px;
+  display: inline-block;
+}
+
+/*# sourceMappingURL=bfc.css.map */
