@@ -1,0 +1,97 @@
+BFC 的概念：
+            BFC 直译为“块级格式化上下文”，它是一个独立的渲染区域，只有 Block-level-box 参与，它规定了独立的渲染区域内 Block-level-box 是如何布局的，并且这个独立区域与外部区域互不影响。
+
+以下元素会触发 BFC：
+            1、根元素
+            2、float 属性不为 none 的元素
+            3、position 属性为 absolute 或 fixed 的元素
+            4、display 属性为 inline-block，table-cell，table-caption，flex，inline-flex 的元素
+            5、overflow 属性不为 visible 的元素
+ BFC 的布局规则：
+            1、独立渲染区域内的 Block-level-box 会在垂直方向上，一个接一个的排列；
+            2、Block-level-box 在垂直方向上的距离由 margin 决定，属于同一个 BFC 的两个相邻 Block-level-box 的 margin 会发生重叠；
+            3、每个 Block-level-box 的左外边距都会与独立渲染区域的左边框相重叠；
+            4、BFC 生成的独立渲染区域不会与 float box 相重叠；
+            5、计算独立渲染区域高度时，浮动元素也参与计算；
+BFC 的作用：
+            1、清除浮动
+            2、防止 margin 重叠
+            3、多栏布局
+1、清除浮动
+具体示例：
+<div id="container">
+        <div class="item"></div>
+        <div class="item"></div>
+</div>
+
+#container {
+        border: 1px solid red;
+        width: 500px;
+}
+#container .item {
+        width: 200px;
+        height: 200px;
+        float: left;
+        border: 1px solid blue;
+}
+PS：在这种情况下 container 的高度不会被自动撑开；我们可以通过触发 container 生成 BFC，当 container 生成 BFC 后，浮动元素会参与高度的计算从而使 container 的高度自动撑开。
+#container {
+        width: 500px;
+        overflow: hidden;
+        border: 1px solid red;
+}
+2、防止 margin 重叠
+具体示例：
+<div class="item"></div>
+<div class="item"></div>
+
+ .item {
+        width: 200px;
+        height: 200px;
+        margin: 20px;
+        background: #000;
+}
+PS：两个块级元素垂直方向上的距离为 20px，即在垂直方向上块级元素的 margin 会发生重叠。属于同一个 BFC 的两个相邻 Block-level-box 的 margin 发生了重叠。我们可以在其中一个 div 的外面再包裹一层容器，并触发该容器生成一个 BFC。那么这两个 div 便不属于同一个 BFC 就不会发生 margin 重叠了。
+
+<div id="container">
+        <div class="item"></div>
+</div>
+<div class="item"></div>
+#container {
+        overflow: hidden;
+        border: 1px solid red;
+}
+ .item {
+        width: 200px;
+        height: 200px;
+        margin: 20px;
+        background: #000;
+}
+3、多栏布局
+具体示例：
+<div id="container">
+        <div class="left"></div>
+        <div class="right"></div>
+</div>
+
+#container {
+        width: 600px;
+        position: relative;
+}
+#container .left {
+        width: 200px;
+        height: 300px;
+        float: left;
+        background: red;
+}
+#container .right {
+        height: 400px;
+        background: bule;
+}
+PS：根据 BFC 布局规则：BFC 的区域不会与 float box 相重叠。所以我们可以通过触发右侧的 div 生成 BFC，来实现自适应两栏布局，即左栏宽度固定，右栏可以根据浏览器宽度自适应。
+#container .right {
+        height: 400px;
+        background: bule;
+        overflow: hidden;
+}
+PS：在 CSS2 中有 BFC 和 IFC 的概念，CSS3 中新增了 FFC 和 GFC。 

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>图片像素处理</title>
+</head>
+
+<body>
+    <canvas id="canvas" width="500" height="500"></canvas>
+    <script>
+    var canvas = document.getElementById("canvas");
+    canvas.style.background = "black";
+    ctx = canvas.getContext("2d");
+    var pixSize = 20,
+        h = canvas.height,
+        w = canvas.width;
+    console.log(w);
+    console.log(ctx);
+    var img = new Image();
+    img.src = "C:/Users/god/Desktop/像素处理/demo1.jpg";
+    // var imgData;
+    console.log(img);
+    img.onload = function() {
+        ctx.drawImage(img, 0, 0, w, h);
+        draw( ctx, 200, 200, 350, 350, 13);
+    }
+function draw( ctx, x1, y1, x2, y2, pixSize) {
+	var imgData = ctx.getImageData( 0, 0, 500, 500).data;
+	var pos, red, green, blue;
+	console.log("imageData" + imgData);
+	for (var y = y1; parseInt(y) < parseInt(y2); y = parseInt(y + pixSize)) {
+            for (var x = x1; parseInt(x) < parseInt(x2); x = parseInt(x + pixSize)) {
+
+                // console.log("x： " + parseInt(x + pixSize));
+                // var k = random(205);
+                // pixSize = random( 30, 10);
+                 pos = (x + parseInt(y) * 500) * 4;
+                console.log("pos " + pos);
+                red = imgData[pos];
+                 green = imgData[pos + 1];
+                 blue = imgData[pos + 2];
+                console.log("red=%s,green=%s,blue=%s", red,green,blue);
+                ctx.fillStyle = "rgb("+red+","+green+","+blue+")";
+                ctx.fillRect(x, y, pixSize, pixSize);
+                  // console.log("ok")
+                   // console.log("x=%s,y=%s",x,y);
+            }
+             // console.log("y： " + parseInt(y + pixSize));
+        }
+
+}
+function random( max, min ) {
+	return 10 + parseInt(Math.random()*max);
+}
+
+
+
+
+
+    function random(value) {
+        return "rgb(" + parseInt(Math.random() * value) + "," + parseInt(Math.random() * value) + "," + parseInt(Math.random() * value) + ")";
+    }
+    </script>
+</body>
+
+</html>

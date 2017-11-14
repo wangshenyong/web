@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>文字弹出特效</title>
+	<style>
+		.tancc
+		{
+			
+			position:relative;
+			left:-99999px; /*必须大于文字长度*/
+			font-style:italic;
+			font-size:45px;
+		}
+	</style>
+</head>
+<body>
+	<div id="tanc" class="tancc">文字弹出效果文字弹出效果文字弹出效果文字弹出效果</div>
+	<script>
+		window.onload = function () {
+			var tanc = document.getElementById("tanc");
+			tanc.style.left = -tanc.offsetWidth+"px";
+			function tancf () {
+				if( parseInt(tanc.style.left)<0 ) {
+					tanc.style.left = parseInt(tanc.style.left) + 1+"px";
+				} else {
+					tanc.style.fontStyle = "normal";
+					window.clearInterval(timer);
+				}
+			}
+			var timer = window.setInterval( function (){
+				tancf();
+			},1000/60 );
+		}
+	</script>
+</body>
+</html>

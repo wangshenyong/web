@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>两列布局</title>
+    <style type="text/css">
+        html,body{
+            height:100%;
+        }
+        .left {
+           float:left;
+            width:120px;
+            background-color: red;
+            height:100%;
+        }
+        .right
+        {
+           overflow:hidden;
+           background-color: aquamarine;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="left">我是固定左边导航栏</div>
+    <div class="right">
+     <p style="color:#EEEEEE;font-size:30px">
+        overflow:hidden，触发bfc模式，浮动无法影响，隔离其他元素，IE6不支持，左侧left设置margin-left当作left与right之间的边距，右侧利用overflow:hidden 进行形成bfc模式
+如果我们需要将两列设置为等高，可以用下述方法将“背景”设置为等高，其实并不是内容的等高
+    </p>
+    </div>
+   
+</body>
+
+</html>

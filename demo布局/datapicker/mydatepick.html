@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>datePicker</title>
+	<link rel="stylesheet" href="god-datepicker.css">
+	<script type="text/javascript" src="god-datepicker.js">
+		
+	</script>
+
+</head>
+<body>
+	<div class="god-datepicker-wrapper">
+		<div class="god-datepicker-header">
+			<a href="#" class="god-datepicker-btn
+			 god-datepicker-prev-btn">&lt;</a>
+			<a href="#" class="god-datepicker-btn 
+			 god-datepicker-next-btn">&gt;</a>
+			<span class="ui-datepicker-curr-month">
+				2016-12-12
+			</span>
+		</div>
+		<div class="god-datepicker-body">
+			<table>
+				<thred>
+					<tr>
+						<th>一</th>
+						<th>二</th>
+						<th>三</th>
+						<th>四</th>
+						<th>五</th>
+						<th>六</th>
+						<th>日</th>
+					</tr>
+				</thred>
+				<tbody>
+					<tr>
+						<td>29</td>
+						<td>30</td>
+						<td>1</td>
+						<td>2</td>
+						<td>3</td>
+						<td>4</td>
+						<td>5</td>
+					</tr>
+					<tr>
+						<td>6</td>
+						<td>7</td>
+						<td>8</td>
+						<td>9</td>
+						<td>10</td>
+						<td>11</td>
+						<td>12</td>
+					</tr>
+					<tr>
+						<td>29</td>
+						<td>30</td>
+						<td>1</td>
+						<td>2</td>
+						<td>3</td>
+						<td>4</td>
+						<td>5</td>
+					</tr>
+					<tr>
+						<td>29</td>
+						<td>30</td>
+						<td>1</td>
+						<td>2</td>
+						<td>3</td>
+						<td>4</td>
+						<td>5</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<script src="god-datepick-main.js">
+	</script>
+	<script>
+		var temp = datepicker.getMonthData (2016,2);
+
+		console.info(temp);
+		datepicker.init(document.querySelector('.god-datepicker-wrapper'));
+	</script>
+</body>
+</html>

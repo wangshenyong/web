@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>文字滚动</title>
+	<style>
+		.word
+		{
+			color:red;
+			font-size:30px;
+		}
+	</style>
+</head>
+<body>
+	<div id="word" class="word" onmouseenter ="wordstart()" onmouseleave="wordstop()">1</div>
+	<script>
+
+		var timer;
+		function wordstart() {
+			clearTimeout(timer);
+			timer = setTimeout(function() {
+				gotime();
+			}, 100);
+		}
+
+		function gotime () {
+			var num = document.getElementById("word");
+			num.innerHTML = parseInt(num.innerHTML)>8 ? 0 : parseInt(num.innerHTML)+1; 
+			wordstart();
+		} 
+
+		function wordstop () {
+			window.clearTimeout(timer);
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>html5总结</title>
+    <link rel="stylesheet" href="dist/css/bootstrap.css">
+    <style>
+    .navul {
+        display: block;
+        list-style: none;
+        box-shadow: 5px -1px 1px #000000;
+        position: fixed;
+        top: 50px;
+        left: 0px;
+        opacity: 0.4;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    #menu {
+        position: fixed;
+        top: 10px;
+        left: 5px;
+        cursor: pointer;
+        width: 100px;
+        line-height: 30px;
+        background: #FFFFFF;
+        text-align: center;
+        box-shadow: 1px 1px 1px 1px yellow;
+        border-radius: 10px;
+        font-size: 20px;
+        color: green;
+        text-decoration: none;
+    }
+
+    .navul {
+        display: none;
+    }
+
+    .navul>li {
+        width: 100px;
+        height: 30px;
+        margin: 0px;
+        background: green;
+        margin-bottom: 5px;
+    }
+
+    .navul>li :hover {
+        height: 30px;
+        /*z-index:1;*/
+        background: green;
+        font-size: 20px;
+        opacity: none;
+        position: absolute;
+    }
+
+    .navul>li>a {
+        text-align: right;
+        display: block;
+        color: #E8E8E8;
+        width: 100%;
+        height: 100%;
+        box-shadow: 0px 5px 5px blue;
+        text-decoration: none;
+        padding-right: 10px;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="panel panel-success">
+            <div class="panel-heading" id="article">
+                <h1>article</h1></div>
+            <div class="panel-body">
+                <article>
+                    <h2>article</h2>
+                    <p>独立包含的内容，是一个语义标签，块级元素</p>
+                </article>
+            </div>
+            <div class="panel-footer">
+                <code><a href="#main">article</a></code>
+            </div>
+        </div>
+        <div class="panel panel-success">
+            <div class="panel-heading" id="aside">
+                <h1>aside</h1></div>
+            <div class="panel-body">
+                <aside>
+                    <h2>aside</h2>
+                    <p>与独立内容相关的内容，是一个语义标签，块级元素</p>
+                </aside>
+            </div>
+        </div>
+        <div class="panel panel-success">
+            <div class="panel-heading" id="base">
+                <h1>base</h1></div>
+            <div class="panel-body">
+                <aside>
+                    <h2>base</h2>
+                    <p>定义html页面的基础连接</p>
+                    <code>&lt;base href=&quot;http://www.baidu.com&quot;&nbsp;/&gt;</code>
+                </aside>
+            </div>
+        </div>
+        <div class="panel panel-success">
+            <div class="panel-heading" id="basefont">
+                <h1>basefont</h1></div>
+            <div class="panel-body">
+                <aside>
+                    <h2>basefont</h2>
+                    <p>定义html页面的基础字体的样式设置</p>
+                    <code>&lt;basefont color=&quot;#ffffff&quot;&nbsp;size= &quot;32&quot;/&gt;</code>
+                </aside>
+            </div>
+        </div>
+        <div class="panel panel-success">
+            <div class="panel-heading" id="canvas">
+                <h1>canvas</h1></div>
+            <div class="panel-body">
+                <aside>
+                    <h2>canvas</h2>
+                    <p>h5的画布，默认长度是300px,宽度是150px，背景色是黑色，基于像素点的绘图，与svg不同，canvas绘制的图是标量图，h5提供了一系列的api</p>
+                    <code>&lt;canvas width=&quot;300px&quot;&nbsp;height= &quot;150px&quot;&gt;id=&quot;canvas&quot;&lt;/canvas&gt;</code>
+                </aside>
+            </div>
+        </div>
+        <div class="panel panel-success">
+            <div class="panel-heading" id="caption">
+                <h1>表格的标题</h1></div>
+            <div class="panel-body">
+                <p>caption是用于table的标题标签</p>
+                <code>code:<a href="#caption">caption</a></code>
+            </div>
+            <div class="panel-footer">
+                <table width="100%" border="1">
+                    <colgroup span="1" align="left"></colgroup>
+                    <colgroup span="1" align="right"></colgroup>
+                    <colgroup span="3" align="left" style="color:green"></colgroup>
+                    <caption>caption</caption>
+                    <thead>
+                        <tr>
+                            <th>number</th>
+                            <th>number</th>
+                            <th>number</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>12</td>
+                            <td>23</td>
+                            <td>34</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td>ft</td>
+                            <td>ft</td>
+                            <td>ft</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+        <div class="panel panel-success">
+            <div class="panel-heading" id="colgroup">
+                <h1>colgroup</h1></div>
+            <div class="panel-body">
+                <p>colgroup标签用于对table的列的样式统一布局</p>
+                <code>code:<a href="#caption">colgroup</a></code>
+            </div>
+        </div>
+        <div class="panel panel-success">
+            <div class="panel-heading" id="datalist">
+                <h1>datalist</h1></div>
+            <div class="panel-body">
+                <p>datalist标签用于input输入内容补全（提示）,兼容性不好，还是用其他插件吧</p> <code>
+            		&lt;input id="my" list="b" /&gt;<br/>
+            		&lt;datalist id="b"><br/>
+            			&lt; value="javascript"&gt;&lt;/option&gt;<br/>
+            			&lt;option value="java"&gt;&lt;/option&gt;<br/>
+            			&lt;option value="html"&gt;&lt;/option&gt;<br/>
+            			&lt;option value="css3"&gt;&lt;/option&gt;<br/>
+            		&lt;/datalist&gt;<br/>
+            		</code>
+            </div>
+            <div class="panel-footer">
+                <input id="my" list="b" />
+                <datalist id="b">
+                    <option value="javascript"></option>
+                    <option value="java"></option>
+                    <option value="html"></option>
+                    <option value="css3"></option>
+                </datalist>
+            </div>
+        </div>
+        <div class="panel panel-success">
+            <div class="panel-heading" id="details">
+                <h1>details</h1></div>
+            <div class="panel-body">
+                <p>details描述文档的内容或文档某个部分的细节标签，下拉显示需要描述的内容，兼容性不好</p>
+                <code>
+            		&lt;details&gt;<br/>
+            		&lt;summary&gt;我&lt;/summary&gt;<br/>
+            		&lt;p&gt;我是一个名词但是有时候会变成动词&lt;/p&gt;<br/>
+            			&lt;/details&gt;<br/>
+            	</code>
+            </div>
+            <div class="panel-footer">
+                <details>
+                    <summary>我</summary>
+                    <p>我是一个名词，有时又是一个动词</p>
+                </details>
+            </div>
+        </div>
+        <div class="panel panel-success">
+            <div class="panel-heading" id="fieldset">
+                <h1>fieldset</h1></div>
+            <div class="panel-body">
+                <p>fieldset组合表单中的相关元素，所有的浏览器都兼容，样式很丑</p>
+                <code>
+                	&lt;form&gt;<br/>
+  &lt;fieldset&gt;<br/>
+    &lt;legend&gt;me&lt;/legend&gt;<br/>
+    height: &lt;input type=&quot;text&quot; /&gt;<br/>
+    weight: &lt;input type=&quot;text&quot; /&gt;<br/>
+  &lt;/fieldset&gt;<br/>
+&lt;/form&gt;<br/>
+                </code>
+            </div>
+            <div class="panel-footer">
+                <form>
+                    <fieldset>
+                        <legend>me</legend>
+                        height:
+                        <input type="text" name="height" /> weight:
+                        <input type="text" />
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+        <div class="panel panel-success">
+            <div class="panel-heading" id="figure">
+                <h1>figure</h1></div>
+            <div class="panel-body">
+                <h2>描述放置图片区域</h2>
+                <code>
+            	 &lt;figure&gt;<br/>
+                    &lt;figcaption&gt;<br/>
+                        这是一张没有图片的图片标签<br/>
+                    &lt;/figcaption&gt;<br/>
+                    &lt;img src="" alt="" width="200px" height="80" &nbsp;/&gt;<br/>
+                &lt;/figure&gt;<br/>
+            </code>
+            </div>
+            <div class="panel-footer">
+                <figure>
+                    <figcaption>
+                        这是一张没有图片的图片标签
+                    </figcaption>
+                    <img src="#" alt="图片在哪里" width="200px" height="80">
+                </figure>
+            </div>
+        </div>
+        <div class="panel panel-success">
+            <div class="panel-heading" id="figcaption">
+                <h1>figcaption</h1></div>
+            <div class="panel-body">
+            </div>
+            <div class="panel-footer">
+                <a href="#figure">效果锚点</a>
+            </div>
+        </div>
+        <div class="panel panel-success">
+            <div class="panel-heading" id="nav">
+                <h1>nav</h1></div>
+            <div class="panel-body">
+                <p>导航栏语义标签</p>
+            </div>
+            <div class="panel-footer">
+                <code><a href="#main">main</a></code>
+            </div>
+        </div>
+        <div class="panel panel-success">
+            <div class="panel-heading" id="header">
+                <h1>header</h1></div>
+            <div class="panel-body">
+                <p>页头语义标签</p>
+                <code>
+                	&lt;header&gt;<br/>
+            		&lt;h3&gt;header&lt;/h3&gt;<br/>
+            		&lt;p&gt;this is header&gt;/p&gt;<br/>
+            	&lt;/header&gt;
+                </code>
+            </div>
+            <div class="panel-footer">
+                <header>
+                    <h3>header</h3>
+                    <p>this is header</p>
+                </header>
+            </div>
+        </div>
+        <div class="panel panel-success">
+            <div class="panel-heading" id="footer">
+                <h1>footer</h1></div>
+            <div class="panel-body">
+                <p>页脚语义标签</p>
+            </div>
+            <div class="panel-footer">
+                用法与header等一样
+            </div>
+        </div>
+        <div class="panel panel-success">
+            <div class="panel-heading" id="main">
+                <h1>main</h1></div>
+            <div class="panel-body">
+                <p>main标签定义整个文档的内容，一个页面只能有一个这样的标签，ie不支持，语义标签</p>
+                <code>
+                &lt;main&gt;<br/>
+            		 &lt;h2&gt;main &lt;/h1&gt;<br/>
+					 &lt;p&gt;main标签定义整个文档的内容，一个页面只能有一个这样的标签，ie不支持，语义标签 &lt;/p&gt;<br/>
+					 &lt;h2&gt;nav &lt;/h2&gt;<br/>
+					 &lt;nav&gt;<br/>
+					 &lt;a href="#article"&gt;article &lt;/a&gt;<br/>
+					&lt;a href="#aside"&gt;aside &lt;/a&gt;<br/>
+					&lt;a href="#main"&gt;main &lt;/a&gt; <br/>
+					&lt;/nav&gt;<br/>
+            		 &lt;article&gt;<br/>
+            			 &lt;h3&gt;article &lt;/h3&gt;<br/>
+            			 &lt;p&gt;article内 &lt;/p&gt;<br/>
+            		 &lt;/article&gt;<br/>
+            		 &lt;section&gt;<br/>
+                        	&lt;h4&gt;section&lt;/h4&gt;<br/>
+                        	&lt;p&gt;section content&lt;/p&gt;<br/>
+                        &lt;/section&gt;<br/>
+            		 &lt;aside&gt;<br/>
+            		 &lt;h3&gt;aside &lt;/h3&gt;<br/>
+            		 &lt;p&gt;aside内 &lt;/p&gt;<br/>
+            		 &lt;/aside&gt;<br/>
+            	 &lt;/main&gt;<br/>
+            	</code>
+            </div>
+            <div class="panel-footer">
+                <main>
+                    <h2>main</h1>
+					<p>main标签定义整个文档的内容，一个页面只能有一个这样的标签，ie不支持，语义标签</p>
+					<h2>nav</h2>
+                    <nav><a href="#article">article</a>
+                        <a href="#aside">aside</a>
+                        <a href="#main">main</a></nav>
+                    <article>
+                        <h3>article</h3>
+                        <p>article内</p>
+                        <section>
+                            <h4>section</h4>
+                            <p>section content</p>
+                        </section>
+                    </article>
+                    <aside>
+                        <h3>aside</h3>
+                        <p>aside内</p>
+                    </aside>
+                </main>
+            </div>
+        </div>
+        <div class="panel panel-success">
+            <div class="panel-heading" id="optgroup">
+                <h1>optgroup</h1></div>
+            <div class="panel-body">
+                <p>select中optgroup可以把相关的选择组合在一起,所有浏览器都支持</p>
+            </div>
+            <div class="panel-footer">
+                <select>
+                    <optgroup label="前端">
+                        <option value="html5">html5</option>
+                        <option value="css3">css3</option>
+                        <option value="es6">es6</option>
+                        <option value="vue2.0">vue2.0</option>
+                        <option value="sass">sass</option>
+                        <option value="nodejs">nodejs</option>
+                    </optgroup>
+                    <optgroup label="后端">
+                        <option value="java">java</option>
+                        <option value="springMVC">springMVC</option>
+                        <option value="SQL">SQL</option>
+                        <option value="tomcat">tomcat</option>
+                        <option value="nginx">niginx</option>
+                    </optgroup>
+                </select>
+            </div>
+        </div>
+        <div class="panel panel-success">
+            <div class="panel-heading" id="legend">
+                <h1>legend</h1></div>
+            <div class="panel-body">
+                <p>组合表单中的相关元素,所有浏览器都支持</p>
+            </div>
+            <div class="panel-footer">
+                <code><a href="#fieldset">fieldset</a></code>
+            </div>
+        </div>
+        <div class="panel panel-success">
+            <div class="panel-heading" id="progress">
+                <h1>progress</h1></div>
+            <div class="panel-body">
+                <p>progress进度条标签，默认样式不好看，所有浏览器都支持</p>
+            </div>
+            <div class="panel-footer">
+                <progress value="60" max="100"></progress>
+            </div>
+        </div>
+        <div class="panel panel-success">
+            <div class="panel-heading" id="section">
+                <h1>section</h1></div>
+            <div class="panel-body">
+                <p>描述一个文档中的部分，语义标签，所有浏览器都支持</p>
+            </div>
+            <div class="panel-footer">
+                <code><a href="#main">section</a></code>
+            </div>
+        </div>
+        <div class="panel panel-success">
+            <div class="panel-heading" id="other">兼容性不好的标签(不常见)</div>
+            <div class="panel-body">
+                <pre>
+        			菜单组合
+        			&lt;menu&gt;&lt;/menu&gt;
+        			&lt;menuitem&gt;&lt;/menuitem&gt;
+        			输出语句
+        			&lt;output&gt;&lt;/output&gt;
+        			加密
+        			&lt;keygen/&gt;
+				命令
+				&lt;command&gt;&lt;/command&gt;
+				弹窗
+				&lt;dialog&gt;&lt;/dialog&gt;
+
+        		</pre>
+            </div>
+            <div class="panel-footer"></div>
+        </div>
+        <div class="panel panel-success">
+            <div class="panel-heading" id="label">
+                <h1>label</h1></div>
+            <div class="panel-body">
+                <p>
+                    与输入框相关联的元素，输入框的占有域扩大到label的占有域,lable的属性for，值是相关联的元素id ，所有浏览器都很兼容，以后记得写表单时要用它
+                </p>
+            </div>
+            <div class="panel-footer">
+                <form>
+                    <label for="name">label的区域，点击会触发input的事件
+                        <label>
+                            <input type="radio" id="name">
+                </form>
+            </div>
+        </div>
+        <div class="panel panel-success">
+            <div class="panel-heading" id="embed">embed</div>
+            <div class="panel-body">
+                <p>embed用于向html插入内容，例如用它可以将svg插入html中</p>
+            </div>
+        </div>
+        <div class="panel panel-success">
+            <div class="panel-heading" id="object">object</div>
+            <div class="panel-body">
+                <p>object用于向html添加对象，没有用过啊，不过插入svg可以用它</p>
+            </div>
+            <div class="panel-footer"></div>
+        </div>
+        <div class="panel panel-success">
+            <div class="panel-heading" id="time">time</div>
+            <div class="panel-body">
+                <p>用于向计算机描述日期或时间的标签</p>
+            </div>
+        </div>
+        <div class="panel panel-success">
+            <div class="panel-heading" id="audio">audio</div>
+            <div class="panel-body">
+                <p>音频文件引用</p>
+            </div>
+        </div>
+        <div class="panel panel-success">
+            <div class="panel-heading" id="video">video</div>
+            <div class="panel-body">
+                <p>视频文件引用</p>
+            </div>
+        </div>
+    </div>
+    <ul class="navul" id="navul">
+        <li><a href="#main">main</a></li>
+        <li><a href="#article">article</a></li>
+        <li><a href="#nav">nav</a></li>
+        <li><a href="#aside">aside</a></li>
+        <li><a href="#section">section</a></li>
+        <li><a href="#header">header</a></li>
+        <li><a href="#caption">tbody</a></li>
+        <li><a href="#footer">footer</a></li>
+        <li><a href="#base">base</a></li>
+        <li><a href="#basefont">basefont</a></li>
+        <li><a href="#caption">caption</a></li>
+        <li><a href="#colgroup">colgroup</a></li>
+        <li><a href="#figure">figure</a></li>
+        <li><a href="#figcaption">figcaption</a></li>
+        <li><a href="#datalist">datalist</a></li>
+        <li><a href="#details">details</a></li>
+        <li><a href="#fieldset">fieldset</a></li>
+        <li><a href="#legend">legend</a></li>
+        <li><a href="#optgroup">optgroup</a></li>
+        <li><a href="#label">label</a></li>
+        <li><a href="#progress">progress</a></li>
+        <li><a href="#embed">embed</a></li>
+        <li><a href="#object">object</a></li>
+        <li><a href="#time">time</a></li>
+        <li><a href="#video">video</a></li>
+        <li><a href="#audio">audio</a></li>
+        <li><a href="#canvas">canvas</a></li>
+        <li><a href="#other">other</a></li>
+    </ul>
+    <div class="menu">
+        <a id="menu" href="#">菜单</a>
+    </div>
+    <script type="text/javascript" src="dist/js/jquery.js"></script>
+    <script type="text/javascript" src="dist/js/bootstrap.js">
+    </script>
+    <script>
+    window.onload = function() {
+        var menu = document.getElementById("menu");
+        console.log("sdf " + menu);
+        menu.addEventListener("click", function() {
+            if (nav_ul.style.display == 'none') {
+                nav_ul.style.display = "block";
+            } else {
+                nav_ul.style.display = "none";
+            }
+
+            console.log("ok");
+        });
+
+        var nav_ul = document.getElementById("navul");
+        console.log(nav_ul)
+        var ul_height = window.screen.availHeight;
+        var nav_ul_li = nav_ul.children;
+        var nav_ul_li_number = nav_ul_li.length;
+        var nav_ul_li_height = (ul_height - 200) / nav_ul_li_number - 5;
+        console.log(ul_height)
+        console.log(nav_ul_li_height)
+        for (key in nav_ul_li) {
+            console.log(nav_ul_li[key])
+            if (nav_ul_li[key].style)
+                nav_ul_li[key].style.height = nav_ul_li_height + "px";
+        }
+    }
+    </script>
+</body>
+
+</html>

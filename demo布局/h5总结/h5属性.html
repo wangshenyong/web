@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>html5总结</title>
+    <link rel="stylesheet" href="dist/css/bootstrap.css">
+    <style>
+    .navul {
+        display: block;
+        list-style: none;
+        box-shadow: 5px -1px 1px #000000;
+        position: fixed;
+        top: 50px;
+        left: 0px;
+        opacity: 0.4;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    #menu {
+        position: fixed;
+        top: 10px;
+        left: 5px;
+        cursor: pointer;
+        width: 100px;
+        line-height: 30px;
+        background: #FFFFFF;
+        text-align: center;
+        box-shadow: 1px 1px 1px 1px yellow;
+        border-radius: 10px;
+        font-size: 20px;
+        color: green;
+        text-decoration: none;
+    }
+
+    .navul {
+        display: none;
+    }
+
+    .navul>li {
+        width: 150px;
+        height: 30px;
+        margin: 0px;
+        background: green;
+        margin-bottom: 5px;
+    }
+
+    .navul>li :hover {
+        height: 30px;
+        /*z-index:1;*/
+        background: green;
+        font-size: 20px;
+        opacity: none;
+        position: absolute;
+    }
+
+    .navul>li>a {
+        text-align: right;
+        display: block;
+        color: #E8E8E8;
+        width: 100%;
+        height: 100%;
+        box-shadow: 0px 5px 5px blue;
+        text-decoration: none;
+        padding-right: 10px;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="panel panel-success">
+            <div class="panel-heading" >
+                <h1 id="accesskey">accesskey</h1>
+            </div>
+            <div class="panel-body">
+                <h2>快捷键设置属性</h2>
+                <p>a,area,button,input,label,legend,textarea支持accesskey</p>
+            </div>
+            <div class="panel-footer">
+                <h2>alt+a调到百度</h2>
+                <p><a href="http:baidu.com" accesskey="a">百度</a></p>
+            </div>
+        </div>
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <h1 id="data">data</h1>
+            </div>
+            <div class="panel-body">
+                <h2>数据存储</h2>
+            </div>
+        </div>
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <h1 id="contenteditable">contenteditable</h1>
+            </div>
+            <div class="panel-body">
+                <h2>设置html是否可以编辑</h2>
+            </div>
+            <div class="panel-footer">
+                <aside>
+                    <h3>我可以编辑</h3>
+                    <p contenteditable="true">我......</p>
+                </aside>
+            </div>
+        </div>
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <h1 id="dir">dir</h1>
+            </div>
+            <div class="panel-body">
+                <h2>设置文本的方向</h2>
+            </div>
+        </div>
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <h1 id="draggable">draggable</h1>
+            </div>
+            <div class="panel-body">
+                <h2>设置文本是否可以拖拽</h2>
+            </div>
+            <div class="panel-footer">
+                <article draggable="true">
+                    <h3>心情挺好</h3>
+                    <p>打代码的时候，星期都很好,我可以拖动</p>
+                </article>
+            </div>
+        </div>
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <h1 id="hidden">hidden</h1>
+            </div>
+            <div class="panel-body">
+                <h2>设置元素是否显示</h2>
+            </div>
+        </div>
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <h1 id="spellcheck">spellcheck</h1>
+            </div>
+            <div class="panel-body">
+                <h2>检查输入拼写是否有误</h2>
+            </div>
+        </div>
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <h1 id="titile">title</h1>
+            </div>
+            <div class="panel-body">
+                <h2>设置提示信息</h2>
+            </div>
+        </div>
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <h1 id="translate">translate</h1>
+            </div>
+            <div class="panel-body">
+                <h2>设置是否翻译，该属性没有浏览器支持</h2>
+            </div>
+        </div>
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <h1 id="tabindex">tableindex</h1>
+            </div>
+            <div class="panel-body">设置tab键的次数</div>
+        </div>
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <h1 id="onkeydown">onkeydown</h1>
+            </div>
+            <div class="panel-body">
+                <p>用户按下键按键</p>
+            </div>
+        </div>
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <h1 id="onkeypress">onkeypress</h1>
+            </div>
+            <div class="panel-body">
+                <p>用户敲击键盘(down up)</p>
+            </div>
+        </div>
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <h1 id="onkeyup">onkeyup</h1>
+            </div>
+            <div class="panel-body">
+                <p>用户释放键盘</p>
+            </div>
+        </div>
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <h1 id="onblur">onblur</h1>
+            </div>
+            <div class="panel-body">
+                <p>表单元素失去焦点时触发事件</p>
+            </div>
+        </div>
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <h1 id="onfocus">onfocus</h1>
+            </div>
+            <div class="panel-body">
+                <p>表单元素得到焦点时触发事件</p>
+            </div>
+            <div class="panel-footer"></div>
+        </div>
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <h1 id="onchange">onchange</h1>
+            </div>
+            <div class="panel-body">
+                <p>表单元素的内容改变时触发事件</p>
+            </div>
+            <div class="panel-footer"></div>
+        </div>
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <h1 id="oninput">oninput</h1>
+            </div>
+            <div class="panel-body">
+                <p> 表单元素获得用户输入信息是触发事件 </p>
+            </div>
+            <div class="panel-footer"></div>
+        </div>
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <h1 id="onselect">onselect</h1>
+            </div>
+            <div class="panel-body">
+                <p> 表单选择元素选中后触发事件 </p>
+            </div>
+            <div class="panel-footer"></div>
+        </div>
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <h1 id="onformchange">onformchange</h1>
+            </div>
+            <div class="panel-body">
+                <p> 表单的内容改变时触发事件 </p>
+            </div>
+            <div class="panel-footer"></div>
+        </div>
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <h1 id="onforminput">onforminput</h1>
+            </div>
+            <div class="panel-body">
+                <p> 表单获得用户输入时触发事件 </p>
+            </div>
+            <div class="panel-footer"></div>
+        </div>
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <h1 id="onreset">onreset</h1>
+            </div>
+            <div class="panel-body">
+               <p>  表单重置按钮被点击时触发该事件 </p>
+            </div>
+            <div class="panel-footer"></div>
+        </div>
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <h1 id="onsubmit">onsubmit</h1>
+            </div>
+            <div class="panel-body">
+                <p> 表单提交按钮点击时触发事件 </p>
+            </div>
+            <div class="panel-footer"></div>
+        </div>
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <h1 id="oninvalid">oninvalid</h1>
+            </div>
+            <div class="panel-body">
+                <p> 表单元素无效时触发事件 </p>
+            </div>
+            <div class="panel-footer"></div>
+        </div>
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <h1 id="onerror">onerror</h1>
+            </div>
+            <div class="panel-body">
+                在加载数据或者执行脚本错误触发事件
+            </div>
+        </div>
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <h1 id="onmessage">
+                    onmessage
+                </h1>
+            </div>
+            <div class="panel-body">
+                消息到来时触发事件，如服务端消息推送，worker工作都要触发该事件
+            </div>
+        </div>
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <h1 id="onhaschange">onhaschange</h1>
+            </div>
+            <div class="panel-body">
+                文档发生改变时触发事件
+            </div>
+        </div>
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <h1 id="onload">
+                    onload
+                </h1>
+            </div>
+            <div class="panel-body">
+                加载结束触发事件如加载文档图片等
+            </div>
+        </div>
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <h1 id="onpagehide">onpagehide</h1>
+            </div>
+            <div class="panel-body">
+                窗口隐藏触发事件
+            </div>
+        </div>
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <h1 id="onpageshow">onpageshow</h1>
+            </div>
+            <div class="panel-body">
+                窗口由隐藏变为可见是触发事件
+            </div>
+        </div>
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <h1 id="onpopstate">onpopstate</h1>
+            </div>
+            <div class="panel-body">
+                历史记录改变时触发事件
+            </div>
+        </div>
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <h1 id="onresize">onresize</h1>
+            </div>
+            <div class="panel-body">
+                窗口大小发生改变时触发事件
+            </div>
+        </div>
+         <div class="panel panel-success">
+            <div class="panel-heading">
+                <h1 id="onstorage">onstorage</h1>
+            </div>
+            <div class="panel-body">
+                storage的数据更新时触发该事件
+            </div>
+        </div>
+         <div class="panel panel-success">
+            <div class="panel-heading">
+                <h1 id="onunload">onunload</h1>
+            </div>
+            <div class="panel-body">
+                页面已经下载不需要在下载时触发事件
+            </div>
+        </div>
+    </div>
+    <ul class="navul" id="navul">
+        <li><a href="#accesskey">accesskey</a></li>
+        <li><a href="#data">data-*</a></li>
+        <li><a href="#contenteditable">contenteditable</a></li>
+        <li><a href="#dir">dir</a></li>
+        <li><a href="#draggable">draggable</a></li>
+        <li><a href="#hidden">hidden</a></li>
+        <li><a href="#spellcheck">spellcheck</a></li>
+        <li><a href="#titile">title</a></li>
+        <li><a href="#translate">translate</a></li>
+        <li><a href="#tabindex">tabindex</a></li>
+       
+        <li><a href="#onkeydown">onkeydown</a></li>
+        <li><a href="#onkeypress">onkeypress</a></li>
+        <li><a href="#onkeyup">onkeyup</a></li>
+        
+        <li><a href="#onblur">onblur</a></li>
+        <li><a href="#onfocus">onfocus</a></li>
+        <li><a href="#onchange">onchange</a></li>
+        <li><a href="#oninput">oninput</a></li>
+        <li><a href="#oninvalid">oninvalid</a></li>
+        <li><a href="#onselect">onselect</a></li>
+        <li><a href="#onformchange">onformchange</a></li>
+        <li><a href="#onforminput">onforminput</a></li>
+        <li><a href="#onreset">onreset</a></li>
+        <li><a href="#onsubmit">onsubmit</a></li>
+        
+        <li><a href="#onerror">onerror</a></li>
+        <li><a href="#onhaschange">onhaschange</a></li>
+       
+        <li><a href="#onmessage">onmesssage</a></li>
+        <li><a href="#onpagehide">onpagehide</a></li>
+        <li><a href="#onpageshow">onpageshow</a></li>
+        <li><a href="#onpopstate">onpopstate</a></li>
+        <li><a href="#onresize">onresize</a></li>
+        <li><a href="#onstorage">onstorage</a></li>
+        <li><a href="#onunload">onunload</a></li>
+         <li><a href="#onload">onload</a></li>
+    </ul>
+    <div class="menu">
+        <a id="menu" href="#">菜单</a>
+    </div>
+    <script type="text/javascript" src="dist/js/jquery.js"></script>
+    <script type="text/javascript" src="dist/js/bootstrap.js">
+    </script>
+    <script>
+    window.onload = function() {
+        var menu = document.getElementById("menu");
+        menu.addEventListener("click", function() {
+            if (nav_ul.style.display == 'block') {
+                nav_ul.style.display = "none";
+            } else {
+                nav_ul.style.display = "block";
+            }
+
+            console.log("ok");
+        });
+
+        var nav_ul = document.getElementById("navul");
+        console.log(nav_ul)
+        var ul_height = window.screen.availHeight;
+        var nav_ul_li = nav_ul.children;
+        var nav_ul_li_number = nav_ul_li.length;
+        var nav_ul_li_height = (ul_height - 200) / nav_ul_li_number - 5;
+        console.log(ul_height)
+        console.log(nav_ul_li_height)
+        for (key in nav_ul_li) {
+            console.log(nav_ul_li[key])
+            if (nav_ul_li[key].style)
+                nav_ul_li[key].style.height = nav_ul_li_height + "px";
+        }
+    }
+    </script>
+</body>
+
+</html>

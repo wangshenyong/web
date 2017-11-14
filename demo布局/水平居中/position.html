@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>水平居中</title>
+    <style type="text/css">
+        .child {
+            width: 110px;
+            position: absolute;
+            left: 50%;
+            /*            margin-left:-55px;*/
+            transform: translate(-50%);
+            background-color: red;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="child">我已经居中了a</div>
+    <p style="color:#EEEEEE;font-size:30px">
+        transform存在，所以ie9下不兼容, 如果知道child的宽度x，将tansform 换成margin-left:-x/2即可
+    </p>
+</body>
+
+</html>

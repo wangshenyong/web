@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+    <style type="text/css">
+        .content
+        {
+           width:300px;
+           height:200px;
+           background-color:red;
+           margin-bottom: 10px;
+            margin-left: 300px;
+            transition: width 2s,transform 2s;
+          
+
+        }
+        .conent:nth-child(1)
+        {
+            
+        }
+        .content:hover:nth-child(2)
+        {
+            transform:translate(50px,50px);
+        }
+        .content:hover:nth-child(3)
+        {
+            transform:rotate3d(1,1,1,40deg);
+           
+        }
+     
+        .content:nth-child(4)
+        {
+            transform: skew(10deg,10deg);
+            margin-top: 150px;
+        }
+           .content:nth-child(5)
+        {
+            transform: scale(2,2);
+            margin-top:400px;
+        }
+        .content:nth-child(6)
+        {
+            
+            margin-top:200px; 
+           transform: matrix(1.5,0.8,0.6,0.8,200,110);
+            transform-origin: center;
+        }
+    </style>
+    </head>
+   
+    <body>
+        <div class="content" >
+        <div style="opacity:1;width:200px;height:200px;background-color:blue;color:#ffffff;">
+            sdfasfds    
+            <img src="./1.jpg" style=" width:300px;height:300px; -webkit-filter: grayscale(100%),drop-shadow(10px 10px 10px #ffffff); 
+    filter: grayscale(100%),drop-shadow(10px 10px 10px #ffffff)"/>
+        </div>
+        </div>
+         <div class="content" >
+        
+        </div>
+         <div class="content" >
+        
+        </div>
+         <div class="content" >
+        
+        </div>
+         <div class="content" >
+        
+        </div>
+        <div class="content" >
+        
+        </div>
+    </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>水平垂直居中</title>
+    <style type="text/css">
+        html,body
+        {
+            width:100%;
+            height:100%;
+        }
+        .parent {
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+            background-color: brown;
+            width:400px;
+            height:100px;
+        }
+        
+        .child {
+            display: inline-block;
+            background-color: red;  
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="parent">
+        <div class="child">我已经居中了</div>
+    </div>
+    <p style="color:#EEEEEE;font-size:30px">
+       父元素必须设置宽度与高度并且不可以百分比
+    </p>
+</body>
+
+</html>

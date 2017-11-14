@@ -1,0 +1,18 @@
+配置样本
+          $scope.drawData = {
+
+           message:[
+            { color: "red", pict: "0.2", "msg": "kk2" },
+            { color: "black", pict: "0.1", "msg": "kkqweqwe3" },
+            { color: "blue", pict: "0.1", "msg": "kk4" },
+             { color: "red", pict: "0.2", "msg": "kk5" },
+            { color: "rgba(255, 105, 180,0.5)", pict: "0.4", "msg": "kk6" }],
+            fontcolor:"#000000",
+            fontr:"210"
+
+        };
+		
+使用方式
+ <div class="drawclek" drawcle>
+                <canvas id="canvas" width="500px" height="500px"></canvas>
+</div>

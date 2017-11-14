@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>word</title>
+	<style>
+		.word 
+		{
+			color:red;
+			font-size:33px;
+		}
+	</style>
+</head>
+<body>
+	<div id="word" class="word">123</div>
+	<script>
+		function word () {}
+		word.prototype = {
+			init: function () {
+				var wordid = documet.getElementById("word");
+				this.string = wordid.innerHTML.replace("[0-9]/g",$1+" ").split(" ");
+				// this.str = string
+			} ,
+			draw: function () {
+				this.string.forEach(function (value) {
+					var str = <font> parseInt(value)>8?parseInt
+				})
+			}
+		}
+	</script>
+</body>
+</html>
